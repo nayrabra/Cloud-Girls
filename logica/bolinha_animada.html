@@ -1,0 +1,71 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    //lembrar que o cículo tem 4 parâmetros
+    function desenhaCirculo(x, y, raio) {
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+
+    }
+
+    //para não ficar rastros da bolinha anterior
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 600, 400);
+    }
+
+    //a variável x tem que ficar do lado de fora da função, no escopo global
+    //já que se a var ficasse no escopo de função ela seria chamada sempre e o valor do x sempre retornaria a 20, sem modificar
+    var x = 20;
+    var y = 20;
+
+    var bolaIndo = true;
+
+    function atualizaTela() {
+
+        limpaTela();
+        desenhaCirculo(x, y, 10);
+
+        if (bolaIndo == true) {
+            console.log('bolaindo', bolaIndo);
+            x++;
+            if (x >= 590) {
+                bolaIndo = false;
+                y = y + 20;
+            }
+        }
+
+        else {
+            console.log('bolaindo', bolaIndo);
+            x--;
+            if (x <= 10) {
+                bolaIndo = true;
+                y = y + 20;
+            }
+
+            if (y >= 400) {
+                y--;
+            }
+        }
+
+    }
+
+
+    /*setInterval já vem pronta no JS, neste caso, a cada 10 milisegundos ele vai chamar a função atualizaTela
+    primeiro parâmetro do setInterval= função a ser chamada/ segundo parâmetro = intervalo de tempo no qual a função deve ser chamada
+    quando queremos passar uma função como parâmetro para outra, precisamos omitir seu `()`.
+    por isso que não se coloca atualizaTela()
+    queremos que o JavaScript através do `setInterval` chame a função para nós e não faz sentido nós mesmos chamarmos `atualizaTela()`*/
+    setInterval(atualizaTela, 10);
+
+
+</script>

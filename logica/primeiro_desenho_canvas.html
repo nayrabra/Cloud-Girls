@@ -1,0 +1,35 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    //width no canvas é a largura que o desenho na tela terá e height a altura
+    //querySelector é responsável por puxar a informação de outra linguagem para o JS
+    //pode ter gráficos em 2D, 3D, 4D, para informar à tela qual o tipo de pincel, ou seja, o contexto no qual escreveremos na tela, utilizaremos o getContext() e passaremos o 2d como parâmetro.
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext('2d');
+    //fillStyle preenche o retângulo da cor que queremos, esta tem que vir antes de fillRect
+    //fillRect = preencher retângulo
+    //as coordenadas (x e y) de preenchimento do pincel são definidos nos dois primeiros: 0 (x),0 (y) (posição inicial do pincel)
+    //600 (largura)(x) x 400 (altura)(y)/ (posição final do pincel)
+
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    pincel.fillStyle = 'green';
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = 'red';
+    pincel.fillRect(400, 0, 600, 400);
+
+    //((triângulo))
+    //beginPath() indica que o pincel iniciará o seu caminho (não preenche)
+    //moveTo indica o ponto inicial
+    //lineTo indica a nova posição
+    //fill usado no final para indicar que preencha o que foi pedido (não preenche)
+    pincel.fillStyle = 'yellow';
+    pincel.beginPath();
+    pincel.moveTo(300, 200);
+    pincel.lineTo(200, 400);
+    pincel.lineTo(400, 400);
+    pincel.fill();
+
+</script>

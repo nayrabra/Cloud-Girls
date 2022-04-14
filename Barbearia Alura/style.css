@@ -1,0 +1,65 @@
+body {
+    background: #CCCCCC;
+}
+
+/*toda vez que temos um identificador no HTML e queremos referenciar ele no CSS, usamos a # 
+1) O width é a propriedade que devemos manipular para alterar a largura do elemento.
+2) O height ajusta a altura do elemento.
+3) O padding ajusta o espaçamento interno.
+4) A margin ajusta o espaçamento externo. */
+#banner {
+    width: 100%;
+}
+
+.principal {
+    background:#CCCCCC;
+    padding: 30px; /*padding é p o espaçamento interno. */
+}
+
+.titulo-principal {
+    padding-left: 20px;
+}
+
+.titulo-centralizado {
+    text-align:center;
+}
+
+
+#missao {
+    font-size:20px;
+}
+
+p {
+    text-align: center;
+}
+
+em strong {
+    color: #FF0000;
+}
+
+/*a marcação de uma classe no css é um ponto e o nome dela. */
+.beneficios {
+    background:#FFFFFF;
+    padding: 20px;
+}
+
+.itens {
+    font-style: italic;
+}
+
+
+
+/*o display pode ser inline, block ou inline-block.
+block é qdo bloqueia o conteúdo daquela linha, onde a tag ocupa a largura inteira da página.
+inline serve para que a imagem não bloqueie o conteúdo e deixe os outros na lateral.
+inline-block ocupa só o tamanho do conteúdo mas me deixa mexer em sua largura e espaçamento. */
+ul {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+}
+
+.imagembeneficios {
+    width: 50%;
+}

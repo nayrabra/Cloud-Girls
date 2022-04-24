@@ -1,0 +1,88 @@
+<!--"!DOCTYPE" serve para informar ao navegador qual versão do HTML estamos usando. 
+Ao declararmos !DOCTYPE html, estamos dizendo ao navegador que estamos usando a última versão disponível do HTML, que é a 5.
+A tag do DOCTYPE não precisa ser fechada, pois ela é uma tag de informação, não de conteúdo.-->
+<!DOCTYPE html>
+
+<!--"html" é uma tag estrutural, de conteúdo, por isso precisa ser aberta e fechada.
+lang é utilizada para informar a linguagem, idioma da pág. Com isso, temos a página sendo entendida em português. 
+Se algum usuário que não entende português estiver lendo nossa página, o navegador vai oferecer a opção de traduzir.-->
+<html lang="pt-br">
+    <!--As informações que estamos "passando para o navegador" ficam no "head"
+     e as informações que queremos "exibir na nossa página" ficam no "body"-->
+    <head>
+        <!--"meta" é uma tag que passa informações ao navegador  o atributo charset, que é o conjunto de caracteres, o characters set, 
+        que é o dicionário que estamos escolhendo. E escolhemos o dicionário UTF8, que usa acentos e cedilha.
+        Essa tag é criada para que independente da configuração do s.o. utilizada pelo meu usuário, o navegador renderize a pág. corretamente,
+        exibindo todos os acentos, ç, crase etc-->
+        <meta charset="UTF-8">
+        <!--"title" serve para mudar o "nome na aba do navegador"-->
+        <title>Barbearia Alura</title>
+        <!--criar um arq externo é a forma mais comum, isso pq o estilo pode ser aplicado em todas as pags.
+        link é a ligação de um arquivo para o outro. o relacionamento desse link com a propriedade rel e o valor stylesheet, ou seja, 
+        folha de estilo, e vamos dizer onde o arquivo está, href, que é o endereço de referência:-->
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+
+            <div class="caixa"> <!--div é só uma divisão, não tem importância, por isso precisa criar uma classe--> 
+
+                <h1><img src = "logo.png"></h1>
+    
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a> </li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+        <!--header é o cabeçalho da pág. e vem dentro do conteúdo.
+        não é recomendado criar estilos usando tags, o ideal é usarmos classes para tudo-->
+
+        <img class="banner" src="banner.jpg"><!--SEMPRE QUE QUISERMOS FALAR DE "ESTILO" USAMOS A "CLASSE", QDO FALAR DE "COMPORTAMENTO" USA O "IDENTIFICADOR"
+        Qto ao CSS é sempre bom usar uma classe, já que sua força não é tão grande qto o id e ainda segue um padrão-->
+     
+        <!--O caractere "=" serve para atribuir um valor a uma propriedade.-->
+        <main>
+            <section class="principal"> <!--Para um bloco onde o conteúdo tem o mesmo significado, mesmo sentido, usamos uma <section>-->
+                <h2 class="titulo-principal">Sobre a Barbearia Alura</h2>
+
+                <img class="utensilios" src ="utensilios.jpg" alt="Utensilios de um barbeiro">
+    
+                <!--"strong" é para deixar a palavra em "negrito"-->
+                <!--"em" é para dar ênfase, deixando-as em "itálico"-->
+                <p>Localizada no coração da cidade a <strong>Barbearia Alura</strong> traz para o mercado o que há de melhor para o seu cabelo e barba. Fundada em 2019, a Barbearia Alura já é destaque na cidade e conquista novos clientes a cada dia.</p>
+    
+                <p id="missao"><em>Nossa missão é: <strong>"Proporcionar auto-estima e qualidade de vida aos clientes"</strong>.</em></p>
+    
+                <p>Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. O atendimento possui padrão de excelência e agilidade, garantindo qualidade e satisfação dos nossos clientes.</p>
+            </section>
+    
+            <section class="beneficios">
+                <h3 class="titulo-principal">Benefícios</h3>
+    
+                <ul>
+                    <li class="itens">Atendimento aos Clientes</li>
+                    <li class="itens">Espaço diferenciado</li>
+                    <li class="itens">Localização</li>
+                    <li class="itens">Profissionais qualificados</li>
+                </ul>
+    
+                <img src="beneficios.jpg" class="imagembeneficios">
+            </section>
+        </main>
+        
+        <footer> <!-- tag do rodapé-->
+            <img src="logo-branco.png">
+            <p class="copyright">&copy; Copyright Barbearia Alura - 2022</p>
+
+        </footer>
+    </body>
+   
+</html>
+

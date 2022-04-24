@@ -1,65 +1,189 @@
-body {
-    background: #CCCCCC;
+header {
+    background: #BBBBBB;
+    padding: 20px 0;
 }
 
-/*toda vez que temos um identificador no HTML e queremos referenciar ele no CSS, usamos a # 
-1) O width é a propriedade que devemos manipular para alterar a largura do elemento.
-2) O height ajusta a altura do elemento.
-3) O padding ajusta o espaçamento interno.
-4) A margin ajusta o espaçamento externo. */
-#banner {
-    width: 100%;
+.caixa {
+    position: relative;
+    width: 940px;
+    margin: 0 auto; /*p centralizar um conteudo se utiliza a margem automática*/
 }
 
-.principal {
-    background:#CCCCCC;
-    padding: 30px; /*padding é p o espaçamento interno. */
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px; /*margin = espaçamento externo; 1º número= p/ o topo, 2º= p/ a direita, 3º= p/ baixo, 4º= p/ a esquerda */
+}
+
+nav a {
+    text-transform: uppercase; /*uppercase é para deixar o texto em maiúsculo */
+    color: #000000;
+    font-weight: bold; /*bold = negrito */
+    font-size: 22px;
+    text-decoration: none; /*none tira o sublinhado do link*/
+}
+
+/*hover é o comportamento do mouse qd passa por cima do elemento 
+detalhe: adiciona o hover após o item q quer impactar*/
+nav a:hover {
+    color: #C78C19;
+    text-decoration: underline;
+}
+
+.produtos {
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.produtos li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box; /*serve p q o espaçamento lateral esteja dentro do percentual, agora a largura e pixels de espaç. interno estão dentro dos 30% */
+    border: 2px solid #000000; /*borda dos elementos com 2px; do tipo sólido, tem outros tipos como: dotted (circulos) e dashed (tracejado) */
+    border-radius: 10px; /*deixa a borda arredondada */
+}
+
+.produtos li:hover {
+    border-color: #C78C19;
+}
+
+/*active é o comportamento qd o elemento é clicado*/
+.produtos li:active {
+    border-color: #088C19;
+} 
+
+.produtos li:hover h2 {
+    font-size: 34px;
+}
+
+.produtos h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.produto-descricao {
+    font-size: 18px;
+}
+
+.produto-preco {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    background: url("bg.jpg"); /*no CSS ao referenciar uma imagem usamos o valor url, 
+    nesse caso como é p adicionar uma imagem de fundo em outro elemento usa-se url no background
+    Quando colocamos uma imagem de fundo em um elemento, o CSS, por padrão, copia e cola a imagem diversas vezes até ocupar todo o espaço do elemento*/
+    padding: 40px 0;
+}
+
+.copyright {
+    color:#FFFFFF;
+    font-size: 13px;
+    margin: 20px 0 0;
+}
+
+main {
+    width: 940px;
+    margin: 0 auto;
+}
+
+form {
+    margin: 40px 0;
+}
+
+form label, form legend {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input-padrao { 
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+.checkbox {
+    margin: 20px 0;
+}
+
+.enviar {
+    width: 40%;
+    padding: 15px 0;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+.enviar:hover {
+    background: darkorange;
+    transform: scale(1.2); 
+}
+
+table {
+    margin: 20px 0 40px;
+}
+
+thead {
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+
+td, th {
+    border: 1px solid #000000;
+    padding: 8px 15px;
+}
+
+/*css da página inicial*/
+.banner {
+    width:100%;
 }
 
 .titulo-principal {
-    padding-left: 20px;
-}
-
-.titulo-centralizado {
-    text-align:center;
-}
-
-
-#missao {
-    font-size:20px;
-}
-
-p {
     text-align: center;
+    font-size: 2em; /*vai ter o dobro de tamanho da fonte base */
+    margin: 0 0 1em;
+    clear: left;/*a propriedade clear vai limpar o float que tem em utensilios*/
 }
 
-em strong {
-    color: #FF0000;
+.principal p {
+    margin: 0 0 1em;
 }
 
-/*a marcação de uma classe no css é um ponto e o nome dela. */
-.beneficios {
-    background:#FFFFFF;
-    padding: 20px;
+.principal strong {
+    font-weight: bold;
 }
 
-.itens {
+.principal em {
     font-style: italic;
 }
 
-
-
-/*o display pode ser inline, block ou inline-block.
-block é qdo bloqueia o conteúdo daquela linha, onde a tag ocupa a largura inteira da página.
-inline serve para que a imagem não bloqueie o conteúdo e deixe os outros na lateral.
-inline-block ocupa só o tamanho do conteúdo mas me deixa mexer em sua largura e espaçamento. */
-ul {
-    display: inline-block;
-    vertical-align: top;
-    width: 20%;
-    margin-right: 15%;
+.utensilios {
+    width: 120px;
+    float: left; /*o float serve p q o elemento se destaque (flutuação), e outros elementos se possicionam ao redor dele*/
+    margin: 0 20px 20px 0; /*em cima, direita, baixo, esquerda*/
 }
 
 .imagembeneficios {
-    width: 50%;
+    width: 60%;
 }

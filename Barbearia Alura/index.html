@@ -15,6 +15,8 @@ Se algum usuário que não entende português estiver lendo nossa página, o nav
         Essa tag é criada para que independente da configuração do s.o. utilizada pelo meu usuário, o navegador renderize a pág. corretamente,
         exibindo todos os acentos, ç, crase etc-->
         <meta charset="UTF-8">
+        <!--viewport é a qtidade de pixels que tem naquela visualização da tela-->
+        <meta name="viewport" content="width=device-width">
         <!--"title" serve para mudar o "nome na aba do navegador"-->
         <title>Barbearia Alura</title>
         <!--criar um arq externo é a forma mais comum, isso pq o estilo pode ser aplicado em todas as pags.
@@ -22,6 +24,7 @@ Se algum usuário que não entende português estiver lendo nossa página, o nav
         folha de estilo, e vamos dizer onde o arquivo está, href, que é o endereço de referência:-->
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -33,7 +36,7 @@ Se algum usuário que não entende português estiver lendo nossa página, o nav
     
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a> </li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="produtos.html">Produtos</a></li>
                         <li><a href="contato.html">Contato</a></li>
                     </ul>
@@ -62,18 +65,34 @@ Se algum usuário que não entende português estiver lendo nossa página, o nav
     
                 <p>Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. O atendimento possui padrão de excelência e agilidade, garantindo qualidade e satisfação dos nossos clientes.</p>
             </section>
+
+            <section class="mapa">
+                <h3 class="titulo-principal">Nosso estabelecimento</h3>
+                <p>Nosso estabelecimento está localizado no coração da cidade.</p>
+                <!--A tag <iframe> é específica para abrir "janelas" em nosso site, com proporções definidas e endereço da informação. Podemos fazer o mesmo com outros serviços que apresentem essa possibilidade de compartilhamento de informações, como vídeos, fotos de Instagram, páginas de Facebook e outros. Os acessos externos que complementam a página são, geralmente, feitos pela tag <iframe>.-->
+                    <div class="mapa-conteudo">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4483278365396!2d-46.63466568562861!3d-23.588249068469487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0xab35da2f5ca62674!2sCaelum!5e0!3m2!1spt-BR!2sbr!4v1568814489656!5m2!1spt-BR!2sbr" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    </div>
+
+            </section>
     
             <section class="beneficios">
                 <h3 class="titulo-principal">Benefícios</h3>
-    
-                <ul>
-                    <li class="itens">Atendimento aos Clientes</li>
-                    <li class="itens">Espaço diferenciado</li>
-                    <li class="itens">Localização</li>
-                    <li class="itens">Profissionais qualificados</li>
-                </ul>
-    
-                <img src="beneficios.jpg" class="imagembeneficios">
+
+                <div class="conteudo-beneficios">   
+                    <ul class="lista-beneficios">
+                        <li class="itens">Atendimento aos Clientes</li>
+                        <li class="itens">Espaço diferenciado</li>
+                        <li class="itens">Localização</li>
+                        <li class="itens">Profissionais qualificados</li>
+                        <li class="itens">Pontualidade</li>
+                        <li class="itens">Localização</li>
+                    </ul><img src="beneficios.jpg" class="imagem-beneficios">
+                </div>
+
+                <div class="video">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/wcVVXUV0YUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </section>
         </main>
         

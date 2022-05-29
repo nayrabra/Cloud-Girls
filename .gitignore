@@ -1,1 +1,4 @@
 .DS_Store
+alura-typer/servidor/node_modules
+alura-typer-servidor-cors/servidor/node_modules
+alura-typer/servidor/package-lock.json
